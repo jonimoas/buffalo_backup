@@ -1,0 +1,14 @@
+[Unit]
+Description=Buffalo Backup Script
+After=network.target
+
+[Service]
+ExecStart=/home/backup.sh
+Restart=always
+User=root
+WorkingDirectory=/root
+StandardOutput=append:/var/log/nas-backup.log
+StandardError=append:/var/log/nas-backup.log
+
+[Install]
+WantedBy=multi-user.target
