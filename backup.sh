@@ -8,7 +8,7 @@ echo "mounted"
 sleep 60
 java -jar <ACPPATH>/acp_commander.jar -t <BUFFALOIP> -pw <BUFFALOPASS> -o
 mkdir -p <DEST>
-ulimit -m 1048576 && ionice -c2 -n7 rsync -a --partial --info=NAME --human-readable --timeout=600 --recursive <SOURCE> <DEST>
+ulimit -m 1048576 && ionice -c2 -n7 rsync -a --partial --inplace --info=NAME --human-readable --timeout=600 --recursive <SOURCE> <DEST>
 umount <LOCALSHARE>
 echo "unmounted"
 sleep 60
